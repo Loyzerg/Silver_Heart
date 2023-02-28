@@ -20,6 +20,9 @@ func _physics_process(delta):
 	#остановка со временем
 	motion.x = lerp(motion.x, 0, AIR_RESISTENCE)
 	motion.y = lerp(motion.y, 0, AIR_RESISTENCE)
+	if x_input == 0 and y_input == 0:
+		motion.x = 0
+		motion.y = 0
 
 	#анимация
 	var anim = "idle"
