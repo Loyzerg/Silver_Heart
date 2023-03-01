@@ -5,6 +5,7 @@ const MAX_SPEED = 200
 const AIR_RESISTENCE = 0.05
 
 var motion = Vector2.ZERO
+var idle = "idle_front"
 
 func _physics_process(delta):
 	#обработка события нажатия клавишь
@@ -25,17 +26,22 @@ func _physics_process(delta):
 		motion.y = 0
 
 	#анимация
-	var anim = "idle"
-	
+	var anim = "idle_front" 	
 	if x_input > 0:
 		anim = "walk_right"
+		idle = "idle_right"
 	if x_input < 0:
 		anim = "walk_left"
+		idle = "idle_left"
 	if y_input > 0:
 		anim = "walk_front"
+		idle = "idle_front"
 	if y_input < 0:
 		anim = "walk_back"
+		idle = "idle_back"
+	if ((x_input == 0 ) and (y_input == 0 )):
+			anim=idle
 	if $Hort.animation != anim:
 		$Hort.play(anim)
-	
+		
 	

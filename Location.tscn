@@ -1,9 +1,25 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://nodes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://nodes/Player.gd" type="Script" id=2]
 [ext_resource path="res://sprites/region_1/location_1/room.png" type="Texture" id=3]
 [ext_resource path="res://nodes/Table.tscn" type="PackedScene" id=4]
+
+[sub_resource type="SegmentShape2D" id=1]
+a = Vector2( -507.377, 580.525 )
+b = Vector2( -67.1671, 488.378 )
+
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( -302.671, 416.533 )
+b = Vector2( -6.57147, 1292.88 )
+
+[sub_resource type="SegmentShape2D" id=3]
+a = Vector2( 1183, 370 )
+b = Vector2( 1450, 770 )
+
+[sub_resource type="SegmentShape2D" id=4]
+a = Vector2( 100, 831 )
+b = Vector2( 1435, 827 )
 
 [node name="Location" type="Node2D"]
 
@@ -13,6 +29,20 @@
 position = Vector2( 765, 455 )
 scale = Vector2( 3.33043, 3.33043 )
 texture = ExtResource( 3 )
+
+[node name="Wall" type="CollisionShape2D" parent="Font"]
+rotation = -0.8431
+shape = SubResource( 1 )
+
+[node name="Wall2" type="CollisionShape2D" parent="Font"]
+rotation = -1.23847
+shape = SubResource( 2 )
+
+[node name="Wall3" type="CollisionShape2D" parent="Font"]
+shape = SubResource( 3 )
+
+[node name="Wall4" type="CollisionShape2D" parent="Font"]
+shape = SubResource( 4 )
 
 [node name="Table" parent="." instance=ExtResource( 4 )]
 
