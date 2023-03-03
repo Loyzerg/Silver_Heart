@@ -187,6 +187,10 @@ scale = Vector2( 3.31055, 3.31055 )
 frames = SubResource( 11 )
 animation = "idle_right"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="PlayerCollision" type="CollisionShape2D" parent="."]
 position = Vector2( 344, 561 )
 shape = SubResource( 1 )
+
+[node name="CameraPlayer" type="Camera2D" parent="."]
+position = Vector2( 324, 504 )
+editor_draw_drag_margin = true

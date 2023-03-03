@@ -1,0 +1,21 @@
+{
+	"color": "#fff5ae07",
+	"description": "",
+	"display_name": "Планшет",
+	"display_name_bool": true,
+	"id": "character-1677865175.json",
+	"mirror_portraits": false,
+	"name": "PDA.json",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": -370,
+	"offset_y": -150,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://sprites/region_1/location_1/objects/plabshet.png"
+		}
+	],
+	"scale": 300,
+	"theme": "default-theme.cfg"
+}
