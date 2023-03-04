@@ -6,6 +6,7 @@ const AIR_RESISTENCE = 0.05
 
 var motion = Vector2.ZERO
 var idle = "idle_front"
+signal hit
 
 func _physics_process(delta):
 	#обработка события нажатия клавишь
@@ -45,3 +46,12 @@ func _physics_process(delta):
 		$Hort.play(anim)
 		
 	
+func _on_Player_body_entered(body):
+	hide()
+	emit_signal("hit")
+	$CollisionShape2D.set_deferred("disabled", true)
+
+func start(pos):
+	position = pos
+	show()
+	$CollisionShape2D.disabled = false
