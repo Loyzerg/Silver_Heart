@@ -7,6 +7,7 @@ const AIR_RESISTENCE = 0.05
 var motion = Vector2.ZERO
 var idle = "idle_front"
 
+#система передвижения
 func _physics_process(delta):
 	#обработка события нажатия клавишь
 	var x_input = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -44,4 +45,17 @@ func _physics_process(delta):
 	if $Hort.animation != anim:
 		$Hort.play(anim)
 		
+#задел на характеристики персонажа
+
+var vision_lvl = 0
+
+#система предметов
+var inventory = {}
+func pick(item):
+	var it = item.get_name()
+	#print("Get %s" % str(it))
+	if it in inventory.keys():
+		inventory[it] += item.get_amount() 
+	else:
+		inventory[it] = item.get_amount() 
 	

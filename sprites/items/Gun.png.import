@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pixil-frame-0_9.png-2362e97bd4f78c410474505876873e00.stex"
+path="res://.import/Gun.png-877b28b55ada3541ffe627496a3a8c39.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/region_1/location_1/objects/pixil-frame-0_9.png"
-dest_files=[ "res://.import/pixil-frame-0_9.png-2362e97bd4f78c410474505876873e00.stex" ]
+source_file="res://sprites/items/Gun.png"
+dest_files=[ "res://.import/Gun.png-877b28b55ada3541ffe627496a3a8c39.stex" ]
 
 [params]
 

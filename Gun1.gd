@@ -1,8 +1,11 @@
 extends Area2D
 
+
 var active = false
 
+var amount = 1
 
+#система исчезновения и подбора
 func _ready():
 	connect("body_entered", self, '_on_NPC_body_entered')
 	connect("body_exited", self, '_on_NPC_body_exited')
@@ -12,16 +15,12 @@ func _ready():
 #	$SpritePDA.visible = active
 	
 func _input(event):
-	if get_node_or_null('DialogeNode')  == null:
-		if ( event.is_action_pressed("e_click") or $Button.pressed) and active:
-			get_tree().paused = true
-			var dialog = Dialogic.start('timeline_1')
-			dialog.pause_mode = Node.PAUSE_MODE_PROCESS
-			dialog.connect('timeline_end', self, 'unpause')
-			add_child(dialog)
+	if ( event.is_action_pressed("e_click") or $Button.pressed) and active:
+		var pl = get_parent().get_parent().get_player()
+		$Sprite.visible = false
+		$Button.visible = false
+		pl.pick(self)
 
-func unpause(timeline_name):
-	get_tree().paused = false
 
 func _on_NPC_body_entered(body):
 	if body.name == "Player":
@@ -30,3 +29,7 @@ func _on_NPC_body_entered(body):
 func _on_NPC_body_exited(body):
 	if body.name == "Player":
 		active = false
+
+#система инвентаря
+func get_amount():
+	return amount
