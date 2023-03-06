@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/escape_menue.png-41452d03bf6d968bbf1e63556d0a0c84.stex"
+path="res://.import/3.png-1f515b3842ab0ff995cd870c96d64353.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/intetface/escape_menue.png"
-dest_files=[ "res://.import/escape_menue.png-41452d03bf6d968bbf1e63556d0a0c84.stex" ]
+source_file="res://sprites/intetface/backspace_menu/3.png"
+dest_files=[ "res://.import/3.png-1f515b3842ab0ff995cd870c96d64353.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
