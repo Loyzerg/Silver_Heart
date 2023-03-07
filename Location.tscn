@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://nodes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://nodes/Player.gd" type="Script" id=2]
@@ -9,20 +9,19 @@
 [ext_resource path="res://Location.gd" type="Script" id=7]
 [ext_resource path="res://nodes/Items.tscn" type="PackedScene" id=8]
 [ext_resource path="res://nodes/Xray.tscn" type="PackedScene" id=9]
-[ext_resource path="res://sprites/intetface/escape_menue.png" type="Texture" id=10]
-[ext_resource path="res://sprites/intetface/x.png" type="Texture" id=11]
-[ext_resource path="res://Esc_menue.gd" type="Script" id=12]
+[ext_resource path="res://nodes/Esc_menue.tscn" type="PackedScene" id=10]
+[ext_resource path="res://nodes/Back_menue.tscn" type="PackedScene" id=11]
 
 [node name="Location" type="Node2D"]
 script = ExtResource( 7 )
 
-[node name="Font" parent="." instance=ExtResource( 3 )]
-
 [node name="CameraLoc" type="Camera2D" parent="."]
-position = Vector2( 772, 453 )
+position = Vector2( 765, 451 )
 current = true
 zoom = Vector2( 0.69, 0.69 )
 editor_draw_drag_margin = true
+
+[node name="Font" parent="." instance=ExtResource( 3 )]
 
 [node name="Table" parent="." instance=ExtResource( 4 )]
 position = Vector2( 506, -38 )
@@ -37,32 +36,8 @@ position = Vector2( 506, -38 )
 position = Vector2( 129, 31 )
 script = ExtResource( 2 )
 
-[node name="Esc_menue" type="Node2D" parent="."]
-pause_mode = 2
-script = ExtResource( 12 )
+[node name="Esc_menue" parent="." instance=ExtResource( 10 )]
 
-[node name="Interface" type="Area2D" parent="Esc_menue"]
-visible = false
-
-[node name="Xray_filter" type="Sprite" parent="Esc_menue/Interface"]
-modulate = Color( 0.94902, 0.109804, 0.109804, 0.411765 )
-position = Vector2( 1438, 212 )
-rotation = 3.14159
-scale = Vector2( 1337.59, -758.304 )
-texture = ExtResource( 10 )
-
-[node name="Sprite" type="Sprite" parent="Esc_menue/Interface"]
-position = Vector2( 741, 454 )
-scale = Vector2( 2.83, 2.83 )
-texture = ExtResource( 10 )
-
-[node name="Button" type="Button" parent="Esc_menue/Interface"]
-self_modulate = Color( 1, 1, 1, 0.333333 )
-margin_left = 893.0
-margin_top = 127.0
-margin_right = 924.0
-margin_bottom = 158.0
-icon = ExtResource( 11 )
-expand_icon = true
+[node name="Back_menue" parent="." instance=ExtResource( 11 )]
 
 [node name="Xray" parent="." instance=ExtResource( 9 )]

@@ -8,8 +8,8 @@ func _ready():
 
 var x = false
 func _input(event):
-	if event.is_action_pressed("ui_end") or event.is_action_pressed("ui_cancle") or ($Interface/Button.pressed):
-		if x == false:
+	if event.is_action_pressed("ui_end") or event.is_action_pressed("ui_cancel") or ($Interface/Button.pressed):
+		if (x == false) and (get_tree().paused == false):
 			$Interface.visible = true
 			get_tree().paused = true
 			x = true

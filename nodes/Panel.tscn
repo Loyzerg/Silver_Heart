@@ -1,0 +1,143 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://nodes/InvItem.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Panel.gd" type="Script" id=2]
+
+[node name="Panel" type="NinePatchRect"]
+margin_right = 400.0
+margin_bottom = 200.0
+script = ExtResource( 2 )
+
+[node name="Scroll" type="Container" parent="."]
+margin_right = 400.0
+margin_bottom = 200.0
+
+[node name="Grid" type="GridContainer" parent="Scroll"]
+margin_right = 400.0
+margin_bottom = 212.0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 40
+columns = 7
+
+[node name="InvItem" parent="Scroll/Grid" instance=ExtResource( 1 )]
+margin_top = 0.0
+margin_right = 20.0
+margin_bottom = 50.0
+
+[node name="InvItem2" parent="Scroll/Grid" instance=ExtResource( 1 )]
+margin_left = 60.0
+margin_top = 0.0
+margin_right = 80.0
+margin_bottom = 50.0
+
+[node name="InvItem3" parent="Scroll/Grid" instance=ExtResource( 1 )]
+margin_left = 120.0
+margin_top = 0.0
+margin_right = 140.0
+margin_bottom = 50.0
+
+[node name="InvItem4" parent="Scroll/Grid" instance=ExtResource( 1 )]
+margin_left = 180.0
+margin_top = 0.0
+margin_right = 200.0
+margin_bottom = 50.0
+
+[node name="InvItem5" parent="Scroll/Grid" instance=ExtResource( 1 )]
+margin_left = 240.0
+margin_top = 0.0
+margin_right = 260.0
+margin_bottom = 50.0
+
+[node name="InvItem6" parent="Scroll/Grid" instance=ExtResource( 1 )]
+margin_left = 300.0
+margin_top = 0.0
+margin_right = 320.0
+margin_bottom = 50.0
+
+[node name="InvItem7" parent="Scroll/Grid" instance=ExtResource( 1 )]
+margin_left = 360.0
+margin_top = 0.0
+margin_right = 380.0
+margin_bottom = 50.0
+
+[node name="InvItem8" parent="Scroll/Grid" instance=ExtResource( 1 )]
+margin_top = 70.0
+margin_right = 20.0
+margin_bottom = 120.0
+
+[node name="InvItem9" parent="Scroll/Grid" instance=ExtResource( 1 )]
+margin_left = 60.0
+margin_top = 70.0
+margin_right = 80.0
+margin_bottom = 120.0
+
+[node name="InvItem10" parent="Scroll/Grid" instance=ExtResource( 1 )]
+margin_left = 120.0
+margin_top = 70.0
+margin_right = 140.0
+margin_bottom = 120.0
+
+[node name="InvItem11" parent="Scroll/Grid" instance=ExtResource( 1 )]
+margin_left = 180.0
+margin_top = 70.0
+margin_right = 200.0
+margin_bottom = 120.0
+
+[node name="InvItem12" parent="Scroll/Grid" instance=ExtResource( 1 )]
+margin_left = 240.0
+margin_top = 70.0
+margin_right = 260.0
+margin_bottom = 120.0
+
+[node name="InvItem13" parent="Scroll/Grid" instance=ExtResource( 1 )]
+margin_left = 300.0
+margin_top = 70.0
+margin_right = 320.0
+margin_bottom = 120.0
+
+[node name="InvItem14" parent="Scroll/Grid" instance=ExtResource( 1 )]
+margin_left = 360.0
+margin_top = 70.0
+margin_right = 380.0
+margin_bottom = 120.0
+
+[node name="InvItem15" parent="Scroll/Grid" instance=ExtResource( 1 )]
+margin_top = 140.0
+margin_right = 20.0
+margin_bottom = 190.0
+
+[node name="InvItem16" parent="Scroll/Grid" instance=ExtResource( 1 )]
+margin_left = 60.0
+margin_top = 140.0
+margin_right = 80.0
+margin_bottom = 190.0
+
+[node name="InvItem17" parent="Scroll/Grid" instance=ExtResource( 1 )]
+margin_left = 120.0
+margin_top = 140.0
+margin_right = 140.0
+margin_bottom = 190.0
+
+[node name="InvItem18" parent="Scroll/Grid" instance=ExtResource( 1 )]
+margin_left = 180.0
+margin_top = 140.0
+margin_right = 200.0
+margin_bottom = 190.0
+
+[node name="InvItem19" parent="Scroll/Grid" instance=ExtResource( 1 )]
+margin_left = 240.0
+margin_top = 140.0
+margin_right = 260.0
+margin_bottom = 190.0
+
+[node name="InvItem20" parent="Scroll/Grid" instance=ExtResource( 1 )]
+margin_left = 300.0
+margin_top = 140.0
+margin_right = 320.0
+margin_bottom = 190.0
+
+[node name="InvItem21" parent="Scroll/Grid" instance=ExtResource( 1 )]
+margin_left = 360.0
+margin_top = 140.0
+margin_right = 380.0
+margin_bottom = 190.0
