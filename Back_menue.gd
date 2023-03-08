@@ -4,17 +4,17 @@ extends Node2D
 
 func _ready():
 	pass 
-	
 
-var x = false
+
+var back_menue_bool = false
 func _input(event):
 	if event.is_action_pressed("back_i_click") or ($Interface/Button.pressed):
-		if x == false and (get_tree().paused == false):
+		if back_menue_bool == false and (get_tree().paused == false):
 			$Interface.visible = true
 			get_tree().paused = true
-			x = true
+			back_menue_bool = true
 			return
-		if x == true:
+		if back_menue_bool == true:
 			$Interface/Missions.visible = true
 			$Interface/Inventory.visible = false
 			$Interface/Map.visible = false
@@ -23,5 +23,17 @@ func _input(event):
 			$Interface.visible = false
 			$Interface/Inventory/UInventory/Control/Panel.visible = false
 			get_tree().paused = false
-			x = false
+			back_menue_bool = false
+			return
+	if event.is_action_pressed("ui_cancel"):
+		if back_menue_bool == true:
+			$Interface/Missions.visible = true
+			$Interface/Inventory.visible = false
+			$Interface/Map.visible = false
+			$Interface/Gloss.visible = false
+			$Interface/Last.visible = false
+			$Interface.visible = false
+			$Interface/Inventory/UInventory/Control/Panel.visible = false
+			get_tree().paused = false
+			back_menue_bool = false
 			return
