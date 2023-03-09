@@ -25,15 +25,3 @@ func _input(event):
 			get_tree().paused = false
 			back_menue_bool = false
 			return
-	if event.is_action_pressed("ui_cancel"):
-		if back_menue_bool == true:
-			$Interface/Missions.visible = true
-			$Interface/Inventory.visible = false
-			$Interface/Map.visible = false
-			$Interface/Gloss.visible = false
-			$Interface/Last.visible = false
-			$Interface.visible = false
-			$Interface/Inventory/UInventory/Control/Panel.visible = false
-			get_tree().paused = false
-			back_menue_bool = false
-			return
