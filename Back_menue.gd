@@ -22,6 +22,7 @@ func _input(event):
 			$Interface/Last.visible = false
 			$Interface.visible = false
 			$Interface/Inventory/UInventory/Control/Panel.visible = false
+			$Interface/Gloss/UIgloss/ControlGloss/PanelGloss.visible = false
 			get_tree().paused = false
 			back_menue_bool = false
 			return

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://nodes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://nodes/Player.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://nodes/Xray.tscn" type="PackedScene" id=9]
 [ext_resource path="res://nodes/Esc_menue.tscn" type="PackedScene" id=10]
 [ext_resource path="res://nodes/Back_menue.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Gloss_adder.gd" type="Script" id=12]
 
 [node name="Location" type="Node2D"]
 script = ExtResource( 7 )
@@ -41,3 +42,6 @@ script = ExtResource( 2 )
 [node name="Back_menue" parent="." instance=ExtResource( 11 )]
 
 [node name="Xray" parent="." instance=ExtResource( 9 )]
+
+[node name="Gloss_adder" type="Node2D" parent="."]
+script = ExtResource( 12 )

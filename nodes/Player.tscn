@@ -182,8 +182,8 @@ height = 0.0
 [node name="Player" type="KinematicBody2D"]
 
 [node name="Hort" type="AnimatedSprite" parent="."]
-position = Vector2( 333.125, 510.875 )
-scale = Vector2( 3.31055, 3.31055 )
+position = Vector2( 346, 500 )
+scale = Vector2( 3.69336, 3.69336 )
 frames = SubResource( 11 )
 animation = "idle_right"
 

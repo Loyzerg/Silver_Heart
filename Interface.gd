@@ -13,6 +13,10 @@ func _input(event):
 			$Inventory.visible = true
 		$Inventory.visible = false
 		$Map.visible = false
+		if $Gloss.visible == true:
+			var gloss = get_parent().get_parent().get_player().gloss
+			$Gloss/UIgloss/ControlGloss.toggle_gloss(gloss)
+			$Gloss.visible = true
 		$Gloss.visible = false
 		$Last.visible = false
 		return
@@ -23,6 +27,10 @@ func _input(event):
 			$Inventory/UInventory/Control.toggle_inventory(inventory)
 			$Inventory.visible = true
 		$Map.visible = false
+		if $Gloss.visible == true:
+			var gloss = get_parent().get_parent().get_player().gloss
+			$Gloss/UIgloss/ControlGloss.toggle_gloss(gloss)
+			$Gloss.visible = true
 		$Gloss.visible = false
 		$Last.visible = false
 		
@@ -35,6 +43,10 @@ func _input(event):
 			$Inventory.visible = true
 		$Inventory.visible = false
 		$Map.visible = true
+		if $Gloss.visible == true:
+			var gloss = get_parent().get_parent().get_player().gloss
+			$Gloss/UIgloss/ControlGloss.toggle_gloss(gloss)
+			$Gloss.visible = true
 		$Gloss.visible = false
 		$Last.visible = false
 		return
@@ -46,7 +58,10 @@ func _input(event):
 			$Inventory.visible = true
 		$Inventory.visible = false
 		$Map.visible = false
-		$Gloss.visible = true
+		if $Gloss.visible != true:
+			var gloss = get_parent().get_parent().get_player().gloss
+			$Gloss/UIgloss/ControlGloss.toggle_gloss(gloss)
+			$Gloss.visible = true
 		$Last.visible = false
 		return
 	if $l.pressed:
@@ -57,6 +72,10 @@ func _input(event):
 			$Inventory.visible = true
 		$Inventory.visible = false
 		$Map.visible = false
+		if $Gloss.visible == true:
+			var gloss = get_parent().get_parent().get_player().gloss
+			$Gloss/UIgloss/ControlGloss.toggle_gloss(gloss)
+			$Gloss.visible = true
 		$Gloss.visible = false
 		$Last.visible = true
 		return

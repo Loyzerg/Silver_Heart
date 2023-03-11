@@ -20,6 +20,7 @@ func _input(event):
 		$Sprite.visible = false
 		$Button.visible = false
 		pl.pick(self)
+		get_parent().get_parent().get_node("Gloss_adder").about_gun()
 
 
 func _on_NPC_body_entered(body):

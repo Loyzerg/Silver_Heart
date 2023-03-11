@@ -58,4 +58,14 @@ func pick(item):
 		inventory[it] += item.get_amount() 
 	else:
 		inventory[it] = item.get_amount() 
+		
+
+#система глоссария
+var gloss = {}
+func get_gloss(name, inf):
+	#print("Get %s" % str(name))
+	if name in gloss.keys():
+		 return;
+	else:
+		gloss[name] = inf 
 	

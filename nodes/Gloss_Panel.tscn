@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://nodes/Gloss_block.tscn" type="PackedScene" id=1]
+[ext_resource path="res://nodes/Gloss_Panel.gd" type="Script" id=2]
+
+[node name="NinePatchRect" type="NinePatchRect"]
+margin_right = 171.0
+margin_bottom = 81.0
+script = ExtResource( 2 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_right = 722.0
+margin_bottom = 379.0
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+margin_bottom = 200.0
+custom_constants/vseparation = 100
+custom_constants/hseparation = 0
+
+[node name="Gloss_block" parent="ScrollContainer/GridContainer" instance=ExtResource( 1 )]
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Gloss_block2" parent="ScrollContainer/GridContainer" instance=ExtResource( 1 )]
+margin_top = 100.0
+margin_right = 0.0
+margin_bottom = 100.0
+
+[node name="Gloss_block3" parent="ScrollContainer/GridContainer" instance=ExtResource( 1 )]
+margin_top = 200.0
+margin_right = 0.0
+margin_bottom = 200.0

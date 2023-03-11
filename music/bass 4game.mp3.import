@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bass 4game.mp3-3958fd5b87687b3edae5f11d54692657.mp3str"
+
+[deps]
+
+source_file="res://music/bass 4game.mp3"
+dest_files=[ "res://.import/bass 4game.mp3-3958fd5b87687b3edae5f11d54692657.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
