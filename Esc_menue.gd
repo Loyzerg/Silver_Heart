@@ -13,10 +13,13 @@ func _input(event):
 			$Interface.visible = true
 			get_tree().paused = true
 			esc_menue_bool = true
-			return
 			
+			return
 		if esc_menue_bool == true:
 			$Interface.visible = false
 			get_tree().paused = false
 			esc_menue_bool = false
 			return
+func _physics_process(delta):
+			if $Interface/Exit.pressed:
+					get_tree().quit()
