@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Esc_menue.gd" type="Script" id=1]
 [ext_resource path="res://sprites/intetface/escape_menue.png" type="Texture" id=2]
 [ext_resource path="res://sprites/intetface/x.png" type="Texture" id=3]
+[ext_resource path="res://sprites/intetface/exit_button.png" type="Texture" id=4]
 
 [node name="Esc_menue" type="Node2D"]
 pause_mode = 2
@@ -31,3 +32,14 @@ margin_right = 924.0
 margin_bottom = 158.0
 icon = ExtResource( 3 )
 expand_icon = true
+
+[node name="Exit" type="Button" parent="Interface"]
+margin_left = 649.0
+margin_top = 739.0
+margin_right = 837.0
+margin_bottom = 764.0
+action_mode = 0
+icon = ExtResource( 4 )
+flat = true
+align = 0
+icon_align = 1
