@@ -11,8 +11,8 @@
 [ext_resource path="res://Interface.gd" type="Script" id=9]
 [ext_resource path="res://sprites/intetface/escape_menue.png" type="Texture" id=10]
 [ext_resource path="res://nodes/UInventory.tscn" type="PackedScene" id=11]
-[ext_resource path="res://nodes/Gloss_Panel.tscn" type="PackedScene" id=12]
-[ext_resource path="res://nodes/ControlGloss.gd" type="Script" id=13]
+[ext_resource path="res://UIQuests.tscn" type="PackedScene" id=12]
+[ext_resource path="res://UIgloss.tscn" type="PackedScene" id=13]
 
 [node name="Back_menue" type="Node2D"]
 pause_mode = 2
@@ -34,6 +34,9 @@ texture = ExtResource( 10 )
 position = Vector2( 741, 454 )
 scale = Vector2( 2.83, 2.83 )
 texture = ExtResource( 1 )
+
+[node name="UIQuests" parent="Interface/Missions" instance=ExtResource( 12 )]
+visible = true
 
 [node name="Inventory" type="Sprite" parent="Interface"]
 visible = false
@@ -60,18 +63,7 @@ position = Vector2( 741, 454 )
 scale = Vector2( 2.83, 2.83 )
 texture = ExtResource( 2 )
 
-[node name="UIgloss" type="CanvasLayer" parent="Interface/Gloss"]
-
-[node name="ControlGloss" type="Control" parent="Interface/Gloss/UIgloss"]
-margin_right = 40.0
-margin_bottom = 40.0
-script = ExtResource( 13 )
-
-[node name="PanelGloss" parent="Interface/Gloss/UIgloss/ControlGloss" instance=ExtResource( 12 )]
-margin_left = 502.0
-margin_top = 334.0
-margin_right = 673.0
-margin_bottom = 415.0
+[node name="UIgloss" parent="Interface/Gloss" instance=ExtResource( 13 )]
 
 [node name="Last" type="Sprite" parent="Interface"]
 visible = false

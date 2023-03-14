@@ -21,6 +21,7 @@ func _input(event):
 		$Button.visible = false
 		pl.pick(self)
 		get_parent().get_parent().get_node("Gloss_adder").about_gun()
+		get_parent().get_parent().get_node("Quest_adder").quest_go_work_do_m1()
 
 
 func _on_NPC_body_entered(body):

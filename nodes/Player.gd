@@ -68,4 +68,26 @@ func get_gloss(name, inf):
 		 return;
 	else:
 		gloss[name] = inf 
-	
+#система квестов
+var quests = {}
+func get_quest(name):
+	#print("Get %s" % str(name))
+	if name in quests.keys():
+		 return;
+	else:
+		quests[name] = {}
+func get_quest_mission(name, name_quest):
+	#print("Get %s "% str(name_quest))
+	if name in quests.keys():
+		if name_quest in quests[name].keys():
+			return
+		else:
+			quests[name][name_quest]=false
+			#print("Get %s "% str(quests[name][name_quest]))
+func do_quest(name):
+	if name in quests.keys():
+		 quests[name]=null
+func do_quest_mission(name, name_quest):
+	if name in quests.keys():
+		if name_quest in quests[name].keys():
+			quests[name][name_quest]=true

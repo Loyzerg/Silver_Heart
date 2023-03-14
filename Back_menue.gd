@@ -11,6 +11,10 @@ func _input(event):
 	if event.is_action_pressed("back_i_click") or ($Interface/Button.pressed):
 		if back_menue_bool == false and (get_tree().paused == false):
 			$Interface.visible = true
+			#
+			var quests = get_parent().get_player().quests
+			$Interface/Missions/UIQuests/ControlQ.toggle_quest(quests)
+			#
 			get_tree().paused = true
 			back_menue_bool = true
 			return
@@ -23,6 +27,7 @@ func _input(event):
 			$Interface.visible = false
 			$Interface/Inventory/UInventory/Control/Panel.visible = false
 			$Interface/Gloss/UIgloss/ControlGloss/PanelGloss.visible = false
+			$Interface/Missions/UIQuests/ControlQ/PanelQ.visible = false
 			get_tree().paused = false
 			back_menue_bool = false
 			return

@@ -19,6 +19,7 @@ func _input(event):
 			dialog.pause_mode = Node.PAUSE_MODE_PROCESS
 			dialog.connect('timeline_end', self, 'unpause')
 			add_child(dialog)
+			get_parent().get_node("Quest_adder").quest_go_work()
 
 func unpause(timeline_name):
 	get_tree().paused = false
