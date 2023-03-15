@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Esc_menue.gd" type="Script" id=1]
 [ext_resource path="res://sprites/intetface/escape_menue.png" type="Texture" id=2]
 [ext_resource path="res://sprites/intetface/x.png" type="Texture" id=3]
-[ext_resource path="res://sprites/intetface/exit_button.png" type="Texture" id=4]
+[ext_resource path="res://fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 4 )
 
 [node name="Esc_menue" type="Node2D"]
 pause_mode = 2
@@ -39,7 +42,14 @@ margin_top = 739.0
 margin_right = 837.0
 margin_bottom = 764.0
 action_mode = 0
-icon = ExtResource( 4 )
 flat = true
-align = 0
 icon_align = 1
+
+[node name="Label" type="Label" parent="Interface"]
+self_modulate = Color( 0.862745, 0.027451, 0.12549, 1 )
+margin_left = 715.0
+margin_top = 744.0
+margin_right = 779.0
+margin_bottom = 760.0
+custom_fonts/font = SubResource( 1 )
+text = "Exit"
