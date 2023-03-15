@@ -8,7 +8,7 @@ func _ready():
 
 var esc_menue_bool = false
 func _input(event):
-	if (event.is_action_pressed("ui_end") or event.is_action_pressed("ui_cancel") or ($Interface/Button.pressed)):
+	if (event.is_action_pressed("ui_cancel") or ($Interface/Button.pressed)):
 		if (esc_menue_bool == false) and (get_tree().paused == false):
 			$Interface.visible = true
 			get_tree().paused = true

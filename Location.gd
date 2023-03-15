@@ -5,4 +5,3 @@ func get_player():
 
 func _ready():
 	pass
-

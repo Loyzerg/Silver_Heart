@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 0.405405, 0.22973 )
+
+[sub_resource type="RectangleShape2D" id=33]
+extents = Vector2( 43.875, 23.75 )
+
+[sub_resource type="RectangleShape2D" id=34]
+extents = Vector2( 39.125, 4.5 )
+
+[node name="AttackArea" type="Area2D" groups=["Sword"]]
+
+[node name="AttackRight" type="CollisionShape2D" parent="."]
+position = Vector2( 436, 444 )
+scale = Vector2( 111, 111 )
+shape = SubResource( 32 )
+disabled = true
+
+[node name="AttackLeft" type="CollisionShape2D" parent="."]
+position = Vector2( 249, 447 )
+shape = SubResource( 33 )
+disabled = true
+
+[node name="AttackUp" type="CollisionShape2D" parent="."]
+position = Vector2( 342, 355 )
+shape = SubResource( 34 )
+disabled = true
+
+[node name="AttackDown" type="CollisionShape2D" parent="."]
+position = Vector2( 341, 513 )
+shape = SubResource( 34 )
+disabled = true
