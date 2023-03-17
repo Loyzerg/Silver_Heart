@@ -17,7 +17,7 @@ visible = false
 
 [node name="Xray_filter" type="Sprite" parent="Interface"]
 modulate = Color( 0.94902, 0.109804, 0.109804, 0.411765 )
-position = Vector2( 1438, 212 )
+position = Vector2( 740, 457 )
 rotation = 3.14159
 scale = Vector2( 1337.59, -758.304 )
 texture = ExtResource( 2 )
