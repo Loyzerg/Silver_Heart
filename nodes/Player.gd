@@ -9,6 +9,7 @@ var idle = "idle_front"
 var isAttacking = false
 
 
+
 #система передвижения
 func _physics_process(delta):
 	#обработка события нажатия клавишь
