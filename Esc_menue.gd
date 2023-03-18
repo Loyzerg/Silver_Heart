@@ -4,10 +4,7 @@ extends Node2D
 
 func _ready():
 	pass 
-#Добавление класса типа Player для взятия координат персонажа оттуда
-var PlC = preload("res://nodes/PlayerCollision.gd")
 
-var obj = PlC.new()
 
 
 var esc_menue_bool = false
