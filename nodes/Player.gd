@@ -103,28 +103,38 @@ func pick(item):
 
 #система глоссария
 var gloss = {}
+var gloss_persons = {}
+var gloss_world = {}
 func get_gloss(name, inf):
-	#print("Get %s" % str(name))
 	if name in gloss.keys():
 		 return;
 	else:
-		gloss[name] = inf 
+		gloss[name] = inf
+func get_gloss_persons(name, inf):
+	if name in gloss_persons.keys():
+		 return;
+	else:
+		gloss_persons[name] = inf
+func get_gloss_world(name, inf):
+	if name in gloss_world.keys():
+		 return;
+	else:
+		gloss_world[name] = inf 
+		
+
 #система квестов
 var quests = {}
 func get_quest(name):
-	#print("Get %s" % str(name))
 	if name in quests.keys():
 		 return;
 	else:
 		quests[name] = {}
 func get_quest_mission(name, name_quest):
-	#print("Get %s "% str(name_quest))
 	if name in quests.keys():
 		if name_quest in quests[name].keys():
 			return
 		else:
 			quests[name][name_quest]=false
-			#print("Get %s "% str(quests[name][name_quest]))
 func do_quest(name):
 	if name in quests.keys():
 		 quests[name]=null

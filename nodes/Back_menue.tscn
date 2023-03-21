@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://sprites/intetface/backspace_menu/1.png" type="Texture" id=1]
 [ext_resource path="res://sprites/intetface/backspace_menu/4.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://nodes/UInventory.tscn" type="PackedScene" id=11]
 [ext_resource path="res://UIQuests.tscn" type="PackedScene" id=12]
 [ext_resource path="res://UIgloss.tscn" type="PackedScene" id=13]
+[ext_resource path="res://nodes/Gloss.gd" type="Script" id=14]
 
 [node name="Back_menue" type="Node2D"]
 pause_mode = 2
@@ -23,7 +24,6 @@ visible = false
 script = ExtResource( 9 )
 
 [node name="Xray_filter" type="Sprite" parent="Interface"]
-visible = false
 modulate = Color( 0.94902, 0.109804, 0.109804, 0.411765 )
 position = Vector2( 1439, 216 )
 rotation = 3.14159
@@ -57,19 +57,41 @@ position = Vector2( -45.583, 4.947 )
 scale = Vector2( 1.51703, 1.51703 )
 texture = ExtResource( 4 )
 
-[node name="Gloss" type="Sprite" parent="Interface"]
-visible = false
-position = Vector2( 741, 454 )
-scale = Vector2( 2.83, 2.83 )
-texture = ExtResource( 2 )
-
-[node name="UIgloss" parent="Interface/Gloss" instance=ExtResource( 13 )]
-
 [node name="Last" type="Sprite" parent="Interface"]
 visible = false
 position = Vector2( 741, 454 )
 scale = Vector2( 2.83, 2.83 )
 texture = ExtResource( 5 )
+
+[node name="Gloss" type="Sprite" parent="Interface"]
+visible = false
+position = Vector2( 741, 454 )
+scale = Vector2( 2.83, 2.83 )
+texture = ExtResource( 2 )
+script = ExtResource( 14 )
+
+[node name="UIgloss" parent="Interface/Gloss" instance=ExtResource( 13 )]
+
+[node name="Tech" type="Button" parent="Interface/Gloss"]
+margin_left = 104.594
+margin_top = -61.1307
+margin_right = 146.594
+margin_bottom = -41.1307
+text = "Tech"
+
+[node name="Persons" type="Button" parent="Interface/Gloss"]
+margin_left = 104.947
+margin_top = -12.7208
+margin_right = 146.947
+margin_bottom = 7.27915
+text = "Pers"
+
+[node name="World" type="Button" parent="Interface/Gloss"]
+margin_left = 104.947
+margin_top = -37.4558
+margin_right = 146.947
+margin_bottom = -17.4558
+text = "Worl"
 
 [node name="Button" type="Button" parent="Interface"]
 self_modulate = Color( 1, 1, 1, 0.333333 )
@@ -83,34 +105,34 @@ expand_icon = true
 [node name="mis" type="Button" parent="Interface"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 315.0
-margin_top = 211.0
+margin_top = 205.0
 margin_right = 405.0
-margin_bottom = 231.0
+margin_bottom = 240.0
 
 [node name="inv" type="Button" parent="Interface"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 406.0
-margin_top = 211.0
+margin_top = 204.0
 margin_right = 511.0
-margin_bottom = 231.0
+margin_bottom = 241.0
 
 [node name="map" type="Button" parent="Interface"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 512.0
-margin_top = 211.0
+margin_top = 205.0
 margin_right = 616.0
-margin_bottom = 231.0
+margin_bottom = 238.0
 
 [node name="glos" type="Button" parent="Interface"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 618.0
-margin_top = 211.0
+margin_top = 205.0
 margin_right = 720.0
-margin_bottom = 231.0
+margin_bottom = 239.0
 
 [node name="l" type="Button" parent="Interface"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 722.0
-margin_top = 211.0
+margin_top = 206.0
 margin_right = 831.0
-margin_bottom = 231.0
+margin_bottom = 240.0

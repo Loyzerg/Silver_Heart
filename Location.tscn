@@ -37,11 +37,11 @@ position = Vector2( 506, -38 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 129, 31 )
 
+[node name="Xray" parent="." instance=ExtResource( 9 )]
+
 [node name="Esc_menue" parent="." instance=ExtResource( 10 )]
 
 [node name="Back_menue" parent="." instance=ExtResource( 11 )]
-
-[node name="Xray" parent="." instance=ExtResource( 9 )]
 
 [node name="Gloss_adder" type="Node2D" parent="."]
 script = ExtResource( 12 )
