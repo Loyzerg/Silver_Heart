@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://nodes/Panel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://nodes/Control.gd" type="Script" id=2]
+
+[node name="UInventory" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+
+[node name="Panel" parent="Control" instance=ExtResource( 1 )]
+margin_left = 499.0
+margin_top = 324.0
+margin_right = 899.0
+margin_bottom = 524.0

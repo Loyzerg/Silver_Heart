@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://nodes/ControlGloss.gd" type="Script" id=2]
+[ext_resource path="res://nodes/Gloss_Panel.tscn" type="PackedScene" id=3]
+
+[node name="UIgloss" type="CanvasLayer"]
+
+[node name="ControlGloss" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+
+[node name="PanelGloss" parent="ControlGloss" instance=ExtResource( 3 )]
+visible = false
+margin_left = 502.0
+margin_top = 334.0
+margin_right = 673.0
+margin_bottom = 415.0
+
+[node name="PanelPersons" parent="ControlGloss" instance=ExtResource( 3 )]
+visible = false
+margin_left = 490.0
+margin_top = 331.0
+margin_right = 661.0
+margin_bottom = 412.0
+
+[node name="PanelWorld" parent="ControlGloss" instance=ExtResource( 3 )]
+visible = false
+margin_left = 503.0
+margin_top = 345.0
+margin_right = 674.0
+margin_bottom = 426.0

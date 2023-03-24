@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Gun1.gd" type="Script" id=1]
+[ext_resource path="res://sprites/items/Gun1.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 46.0435
+
+[node name="Items" type="Node2D"]
+
+[node name="Gun1" type="Area2D" parent="."]
+position = Vector2( 370, 619 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gun1"]
+position = Vector2( -16, 118 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Gun1"]
+position = Vector2( -18, 126 )
+rotation = -0.602139
+scale = Vector2( 1.57143, 1.57143 )
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="Gun1"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -39.0
+margin_top = 103.0
+margin_right = 10.0
+margin_bottom = 146.0

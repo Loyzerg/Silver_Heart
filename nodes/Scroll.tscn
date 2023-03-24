@@ -1,0 +1,14 @@
+[gd_scene format=2]
+
+[node name="Scroll" type="ScrollContainer"]
+anchor_left = 24.662
+anchor_top = 15.05
+anchor_right = 24.662
+anchor_bottom = 15.05
+margin_left = -272.48
+margin_top = -300.0
+margin_right = 272.52
+margin_bottom = 129.0
+
+[node name="Grid" type="GridContainer" parent="."]
+custom_constants/vseparation = 150

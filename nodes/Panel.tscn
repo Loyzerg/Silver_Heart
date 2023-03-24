@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Panel.gd" type="Script" id=2]
+
+[node name="Panel" type="NinePatchRect"]
+margin_right = 400.0
+margin_bottom = 200.0
+script = ExtResource( 2 )
+
+[node name="Scroll" type="Container" parent="."]
+margin_right = 400.0
+margin_bottom = 200.0
+
+[node name="Grid" type="GridContainer" parent="Scroll"]
+margin_right = 400.0
+margin_bottom = 212.0
+custom_constants/vseparation = 20
+custom_constants/hseparation = 41
+columns = 7

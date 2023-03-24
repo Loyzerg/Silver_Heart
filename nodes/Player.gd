@@ -6,16 +6,19 @@ const AIR_RESISTENCE = 0.05
 
 var motion = Vector2.ZERO
 var idle = "idle_front"
-signal hit
+var isAttacking = false
 
+
+
+#система передвижения
 func _physics_process(delta):
 	#обработка события нажатия клавишь
 	var x_input = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	var y_input = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	if x_input != 0:
+	if x_input != 0 && isAttacking == false:
 		motion.x += x_input * ACCELERATION * delta
 		motion.x = clamp(motion.x, -MAX_SPEED, MAX_SPEED)
-	if y_input != 0:
+	if y_input != 0 && isAttacking == false:
 		motion.y += y_input * ACCELERATION * delta
 		motion.y = clamp(motion.y, -MAX_SPEED, MAX_SPEED)
 	motion = move_and_slide(motion, Vector2.UP)
@@ -26,32 +29,116 @@ func _physics_process(delta):
 		motion.x = 0
 		motion.y = 0
 
-	#анимация
-	var anim = "idle_front" 	
-	if x_input > 0:
-		anim = "walk_right"
-		idle = "idle_right"
-	if x_input < 0:
-		anim = "walk_left"
-		idle = "idle_left"
-	if y_input > 0:
-		anim = "walk_front"
-		idle = "idle_front"
-	if y_input < 0:
-		anim = "walk_back"
-		idle = "idle_back"
-	if ((x_input == 0 ) and (y_input == 0 )):
-			anim=idle
-	if $Hort.animation != anim:
-		$Hort.play(anim)
-		
-	
-func _on_Player_body_entered(body):
-	hide()
-	emit_signal("hit")
-	$CollisionShape2D.set_deferred("disabled", true)
 
-func start(pos):
-	position = pos
-	show()
-	$CollisionShape2D.disabled = false
+#анимация
+
+
+	var anim = "idle_front"
+	if isAttacking == false:
+		if y_input > 0:
+			anim = "walk_front"
+			idle = "idle_front"
+			$Hort.play(anim)
+		elif y_input < 0:
+			anim = "walk_back"
+			idle = "idle_back"
+			$Hort.play(anim)
+		elif x_input > 0:
+			anim = "walk_right"
+			idle = "idle_right"
+			$Hort.play(anim)
+		elif x_input < 0:
+			anim = "walk_left"
+			idle = "idle_left"
+			$Hort.play(anim)
+
+	if Input.is_action_just_pressed("attack"):
+		if (idle == "idle_right"):
+			$Hort.play("attack");
+			$AttackArea/AttackRight.disabled = false;
+			isAttacking = true;
+		if (idle == "idle_left"):
+			$Hort.play("attack");
+			$AttackArea/AttackLeft.disabled = false;
+			isAttacking = true;
+		if (idle == "idle_back"):
+			$Hort.play("attack");
+			$AttackArea/AttackUp.disabled = false;
+			isAttacking = true;
+		if (idle == "idle_front"):
+			$Hort.play("attack");
+			$AttackArea/AttackDown.disabled = false;
+			isAttacking = true;
+
+
+	if ((x_input == 0 ) and (y_input == 0 )) and isAttacking == false:
+		anim=idle
+		$Hort.play(anim)
+
+
+#конец проигрывания анимации атаки
+func _on_Hort_animation_finished():
+	if $Hort.animation == "attack":
+		$AttackArea/AttackRight.disabled = true;
+		$AttackArea/AttackLeft.disabled = true;
+		$AttackArea/AttackUp.disabled = true;
+		$AttackArea/AttackDown.disabled = true;
+		isAttacking = false;
+
+
+#задел на характеристики персонажа
+
+var vision_lvl = 0
+
+#система предметов
+var inventory = {}
+func pick(item):
+	var it = item.get_name()
+	#print("Get %s" % str(it))
+	if it in inventory.keys():
+		inventory[it] += item.get_amount() 
+	else:
+		inventory[it] = item.get_amount() 
+		
+
+#система глоссария
+var gloss = {}
+var gloss_persons = {}
+var gloss_world = {}
+func get_gloss(name, inf):
+	if name in gloss.keys():
+		 return;
+	else:
+		gloss[name] = inf
+func get_gloss_persons(name, inf):
+	if name in gloss_persons.keys():
+		 return;
+	else:
+		gloss_persons[name] = inf
+func get_gloss_world(name, inf):
+	if name in gloss_world.keys():
+		 return;
+	else:
+		gloss_world[name] = inf 
+		
+
+#система квестов
+var quests = {}
+func get_quest(name):
+	if name in quests.keys():
+		 return;
+	else:
+		quests[name] = {}
+func get_quest_mission(name, name_quest):
+	if name in quests.keys():
+		if name_quest in quests[name].keys():
+			return
+		else:
+			quests[name][name_quest]=false
+func do_quest(name):
+	if name in quests.keys():
+		 quests[name]=null
+func do_quest_mission(name, name_quest):
+	if name in quests.keys():
+		if name_quest in quests[name].keys():
+			quests[name][name_quest]=true

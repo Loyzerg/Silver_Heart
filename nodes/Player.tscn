@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://sprites/persons/hort/hort_front.png" type="Texture" id=1]
 [ext_resource path="res://sprites/persons/hort/walk_left/f44b6b328f02133b.png" type="Texture" id=2]
@@ -6,6 +6,10 @@
 [ext_resource path="res://sprites/persons/hort/hort_left.png" type="Texture" id=4]
 [ext_resource path="res://sprites/persons/hort/hort_right.png" type="Texture" id=5]
 [ext_resource path="res://sprites/persons/hort/hort_back.png" type="Texture" id=6]
+[ext_resource path="res://nodes/CameraPlayer.gd" type="Script" id=7]
+[ext_resource path="res://nodes/AttackArea.tscn" type="PackedScene" id=8]
+[ext_resource path="res://nodes/Player.gd" type="Script" id=9]
+[ext_resource path="res://nodes/PlayerCollision.gd" type="Script" id=10]
 [ext_resource path="res://sprites/persons/hort/walk_front/2.png" type="Texture" id=18]
 [ext_resource path="res://sprites/persons/hort/walk_front/8.png" type="Texture" id=19]
 [ext_resource path="res://sprites/persons/hort/walk_back/603c2ea47bc9743c.png" type="Texture" id=20]
@@ -134,6 +138,11 @@ region = Rect2( 1152, 0, 128, 128 )
 
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "idle_back",
@@ -180,17 +189,26 @@ radius = 65.0
 height = 0.0
 
 [node name="Player" type="KinematicBody2D"]
+script = ExtResource( 9 )
 
 [node name="Hort" type="AnimatedSprite" parent="."]
-position = Vector2( 333.125, 510.875 )
-scale = Vector2( 3.31055, 3.31055 )
+position = Vector2( 346, 500 )
+scale = Vector2( 3.69336, 3.69336 )
 frames = SubResource( 11 )
-animation = "idle_right"
+animation = "attack"
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
 position = Vector2( 344, 561 )
 shape = SubResource( 1 )
+script = ExtResource( 10 )
 
 [node name="CameraPlayer" type="Camera2D" parent="."]
 position = Vector2( 324, 504 )
+current = true
+zoom = Vector2( 0.72, 0.72 )
 editor_draw_drag_margin = true
+script = ExtResource( 7 )
+
+[node name="AttackArea" parent="." instance=ExtResource( 8 )]
+
+[connection signal="animation_finished" from="Hort" to="." method="_on_Hort_animation_finished"]

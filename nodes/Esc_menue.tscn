@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Esc_menue.gd" type="Script" id=1]
+[ext_resource path="res://sprites/intetface/escape_menue.png" type="Texture" id=2]
+[ext_resource path="res://sprites/intetface/x.png" type="Texture" id=3]
+[ext_resource path="res://fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 4 )
+
+[node name="Esc_menue" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="Interface" type="Area2D" parent="."]
+visible = false
+
+[node name="Xray_filter" type="Sprite" parent="Interface"]
+modulate = Color( 0.94902, 0.109804, 0.109804, 0.411765 )
+position = Vector2( 740, 457 )
+rotation = 3.14159
+scale = Vector2( 1337.59, -758.304 )
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Interface"]
+position = Vector2( 741, 454 )
+scale = Vector2( 2.83, 2.83 )
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="Interface"]
+self_modulate = Color( 1, 1, 1, 0.333333 )
+margin_left = 893.0
+margin_top = 127.0
+margin_right = 924.0
+margin_bottom = 158.0
+icon = ExtResource( 3 )
+expand_icon = true
+
+[node name="Exit" type="Button" parent="Interface"]
+margin_left = 649.0
+margin_top = 739.0
+margin_right = 837.0
+margin_bottom = 764.0
+action_mode = 0
+flat = true
+icon_align = 1
+
+[node name="Label" type="Label" parent="Interface"]
+self_modulate = Color( 0.862745, 0.027451, 0.12549, 1 )
+margin_left = 715.0
+margin_top = 744.0
+margin_right = 779.0
+margin_bottom = 760.0
+custom_fonts/font = SubResource( 1 )
+text = "Exit"

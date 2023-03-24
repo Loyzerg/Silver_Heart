@@ -1,6 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://sprites/region_1/location_1/room.png" type="Texture" id=1]
+[ext_resource path="res://music/bass 4game.mp3" type="AudioStream" id=2]
+[ext_resource path="res://nodes/AreaCollisionCam.gd" type="Script" id=3]
+[ext_resource path="res://nodes/TelePort.gd" type="Script" id=4]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( -507.377, 580.525 )
@@ -11,8 +14,8 @@ a = Vector2( -302.671, 416.533 )
 b = Vector2( -6.57147, 1292.88 )
 
 [sub_resource type="SegmentShape2D" id=3]
-a = Vector2( 1218, 426 )
-b = Vector2( 1438, 790 )
+a = Vector2( 1211, 408 )
+b = Vector2( 1436, 820 )
 
 [sub_resource type="SegmentShape2D" id=4]
 a = Vector2( 100, 831 )
@@ -38,3 +41,24 @@ shape = SubResource( 3 )
 
 [node name="Wall4" type="CollisionShape2D" parent="."]
 shape = SubResource( 4 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+volume_db = 0.345
+pitch_scale = 1.04
+autoplay = true
+
+[node name="AreaCollisionCam" type="Area2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="AreaCollisionCam"]
+position = Vector2( 367.5, 762.875 )
+polygon = PoolVector2Array( -257.5, 60.125, 1058.5, 60.125, 855.5, -293.875, -71.5, -307.875 )
+
+[node name="TelePort" type="Area2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TelePort"]
+position = Vector2( 137, 87 )
+scale = Vector2( 0.904472, 0.875604 )
+polygon = PoolVector2Array( 1234, 530, 1337, 727, 1357, 719, 1249, 520 )
