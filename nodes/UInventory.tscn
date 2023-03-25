@@ -11,7 +11,7 @@ margin_bottom = 40.0
 script = ExtResource( 2 )
 
 [node name="Panel" parent="Control" instance=ExtResource( 1 )]
-margin_left = 499.0
-margin_top = 324.0
-margin_right = 899.0
-margin_bottom = 524.0
+margin_left = 480.0
+margin_top = 333.0
+margin_right = 859.0
+margin_bottom = 585.0

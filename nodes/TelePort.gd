@@ -8,8 +8,8 @@ func _ready():
 
 func _input(event):
 	if (event.is_action_pressed("e_click") and active):
-		get_parent().get_parent().get_node("Player").global_position.x = 2000
-		get_parent().get_parent().get_node("Player").global_position.y = 300
+		get_parent().get_parent().get_node("Player").global_position.x = 600
+		get_parent().get_parent().get_node("Player").global_position.y = 2550
 
 
 func _on_NPC_body_entered(body):

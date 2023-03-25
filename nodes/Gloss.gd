@@ -4,6 +4,7 @@ func _ready():
 	pass
 
 func _input(event):
+	var closebutton = get_parent().get_node("Button")
 	var gloss = get_parent().get_parent().get_parent().get_player().gloss
 	var gloss_persons = get_parent().get_parent().get_parent().get_player().gloss_persons
 	var gloss_world = get_parent().get_parent().get_parent().get_player().gloss_world
@@ -22,6 +23,9 @@ func _input(event):
 		$UIgloss/ControlGloss/PanelGloss.visible = false
 		$UIgloss/ControlGloss/PanelPersons.visible = false
 		$UIgloss/ControlGloss/PanelWorld.visible = true	
-		
+	if (event.is_action_pressed("back_i_click") == true) or closebutton.pressed:
+		$UIgloss/ControlGloss/PanelGloss.visible = false
+		$UIgloss/ControlGloss/PanelPersons.visible = false
+		$UIgloss/ControlGloss/PanelWorld.visible = false	
 		#$Gloss/UIgloss/ControlGloss.toggle_gloss(gloss)
 		#$Gloss.visible = true

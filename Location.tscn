@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://nodes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/region_1/location_2_1/font.png" type="Texture" id=2]
 [ext_resource path="res://nodes/Font_Loc1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://nodes/Table.tscn" type="PackedScene" id=4]
 [ext_resource path="res://PDA.tscn" type="PackedScene" id=5]
@@ -24,6 +25,13 @@ editor_draw_drag_margin = true
 script = ExtResource( 14 )
 
 [node name="Font" parent="." instance=ExtResource( 3 )]
+
+[node name="Street_2_1" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Street_2_1"]
+position = Vector2( 4079, 2964 )
+scale = Vector2( 3.54348, 3.54348 )
+texture = ExtResource( 2 )
 
 [node name="Table" parent="." instance=ExtResource( 4 )]
 position = Vector2( 506, -38 )
