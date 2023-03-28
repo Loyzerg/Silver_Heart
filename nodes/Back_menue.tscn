@@ -70,10 +70,10 @@ texture = ExtResource( 2 )
 script = ExtResource( 14 )
 
 [node name="Tech" type="Button" parent="Interface/Gloss"]
-margin_left = 104.594
-margin_top = -61.1307
-margin_right = 146.594
-margin_bottom = -41.1307
+margin_left = 105.0
+margin_top = -61.0
+margin_right = 147.0
+margin_bottom = -41.0
 text = "Tech"
 
 [node name="Persons" type="Button" parent="Interface/Gloss"]
@@ -91,6 +91,13 @@ margin_bottom = -17.4558
 text = "Worl"
 
 [node name="UIgloss" parent="Interface/Gloss" instance=ExtResource( 13 )]
+
+[node name="Image" type="TextureRect" parent="Interface/Gloss"]
+margin_left = 10.0
+margin_top = -10.0
+margin_right = 10.0
+margin_bottom = -10.0
+rect_scale = Vector2( 0.75, 0.75 )
 
 [node name="Button" type="Button" parent="Interface"]
 self_modulate = Color( 1, 1, 1, 0.333333 )
