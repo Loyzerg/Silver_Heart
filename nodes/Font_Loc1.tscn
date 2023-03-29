@@ -59,6 +59,6 @@ polygon = PoolVector2Array( -257.5, 60.125, 1058.5, 60.125, 855.5, -293.875, -71
 script = ExtResource( 4 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TelePort"]
-position = Vector2( 137, 87 )
+position = Vector2( 135, 85 )
 scale = Vector2( 0.904472, 0.875604 )
-polygon = PoolVector2Array( 1234, 530, 1337, 727, 1357, 719, 1249, 520 )
+polygon = PoolVector2Array( 1234, 530, 1292.6, 642.078, 1337, 727, 1357, 719, 1249, 520 )
