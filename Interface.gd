@@ -20,6 +20,7 @@ func _input(event):
 		if $Gloss.visible == true:
 			var gloss = get_parent().get_parent().get_player().gloss
 			$Gloss/UIgloss/ControlGloss.toggle_gloss(gloss)
+			$Gloss/UIgloss.visible = false
 			$Gloss.visible = false
 		$Last.visible = false
 		return
