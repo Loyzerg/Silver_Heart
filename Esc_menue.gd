@@ -30,8 +30,8 @@ func _input(event):
 			#get_node("Interface").position.y = get_parent().get_node("Player").get_node("PlayerCollision").global_position.y
 			#С помощью родителей обратился к узлу с кругом взаимодейсвтия игрока и его координатам, отнял их
 			#По сути сделал костыль, но, вроде работает, уже хорошо ёп. Можно как-нибудь подкорректировать позже
-			position.x = get_parent().get_node("Player").get_node("PlayerCollision").global_position.x - 741
-			position.y = get_parent().get_node("Player").get_node("PlayerCollision").global_position.y - 530
+			position.x = get_parent().get_node("Player").get_node("Center").global_position.x - 741
+			position.y = get_parent().get_node("Player").get_node("Center").global_position.y - 457
 			if (esc_menue_bool == false) and (get_tree().paused == false):
 				$Interface.visible = true
 				get_tree().paused = true
