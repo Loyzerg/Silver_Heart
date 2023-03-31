@@ -17,7 +17,7 @@
 [ext_resource path="res://TeleportInRoom.gd" type="Script" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 404.5, 44.5 )
+extents = Vector2( 87, 16.75 )
 
 [node name="Location" type="Node2D"]
 script = ExtResource( 7 )
@@ -41,7 +41,7 @@ texture = ExtResource( 2 )
 script = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Street_2_1/TeleportInRoom"]
-position = Vector2( 976.5, 2968.5 )
+position = Vector2( 657, 2957.25 )
 shape = SubResource( 1 )
 
 [node name="Table" parent="." instance=ExtResource( 4 )]
