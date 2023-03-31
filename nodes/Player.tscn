@@ -185,7 +185,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 65.0
+radius = 26.0
 height = 0.0
 
 [node name="Player" type="KinematicBody2D"]
@@ -198,17 +198,27 @@ frames = SubResource( 11 )
 animation = "attack"
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
-position = Vector2( 344, 561 )
+position = Vector2( 350, 556 )
 shape = SubResource( 1 )
 script = ExtResource( 10 )
 
 [node name="CameraPlayer" type="Camera2D" parent="."]
-position = Vector2( 324, 504 )
+position = Vector2( 353, 477 )
 current = true
 zoom = Vector2( 0.72, 0.72 )
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+drag_margin_left = 0.15
+drag_margin_top = 0.15
+drag_margin_right = 0.15
+drag_margin_bottom = 0.15
 editor_draw_drag_margin = true
 script = ExtResource( 7 )
 
 [node name="AttackArea" parent="." instance=ExtResource( 8 )]
+
+[node name="Center" type="Node2D" parent="."]
+position = Vector2( 354, 476 )
 
 [connection signal="animation_finished" from="Hort" to="." method="_on_Hort_animation_finished"]
