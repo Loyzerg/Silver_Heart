@@ -8,19 +8,18 @@
 font_data = ExtResource( 4 )
 
 [node name="UIQuests" type="CanvasLayer"]
-visible = false
 
 [node name="ControlQ" type="Control" parent="."]
 margin_left = 130.0
 margin_top = 201.0
-margin_right = 1412.0
-margin_bottom = 694.0
+margin_right = 1268.0
+margin_bottom = 979.0
 script = ExtResource( 3 )
 
 [node name="PanelQ" type="NinePatchRect" parent="ControlQ"]
 margin_left = -4.0
-margin_top = -126.0
-margin_right = 1628.0
+margin_top = -15.0
+margin_right = 1179.0
 margin_bottom = 740.0
 script = ExtResource( 2 )
 
@@ -40,5 +39,4 @@ margin_right = 1222.0
 margin_bottom = 716.0
 
 [node name="Grid" type="GridContainer" parent="ControlQ/PanelQ/Scroll"]
-margin_bottom = 300.0
 custom_constants/vseparation = 300

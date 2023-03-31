@@ -27,9 +27,15 @@ custom_fonts/normal_font = SubResource( 1 )
 text = "Здесь информация"
 
 [node name="Label" type="Label" parent="."]
-margin_left = 6.0
-margin_top = 4.0
-margin_right = 78.0
-margin_bottom = 18.0
+margin_left = 20.0
+margin_top = 5.0
+margin_right = 92.0
+margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 text = "Навазание"
+
+[node name="Button" type="Button" parent="."]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 15.0
+margin_bottom = 23.0

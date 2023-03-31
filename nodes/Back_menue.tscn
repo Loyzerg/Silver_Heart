@@ -25,7 +25,7 @@ script = ExtResource( 9 )
 
 [node name="Xray_filter" type="Sprite" parent="Interface"]
 modulate = Color( 0.94902, 0.109804, 0.109804, 0.411765 )
-position = Vector2( 1439, 216 )
+position = Vector2( 623, 2032 )
 rotation = 3.14159
 scale = Vector2( 1337.59, -758.304 )
 texture = ExtResource( 10 )
@@ -36,7 +36,6 @@ scale = Vector2( 2.83, 2.83 )
 texture = ExtResource( 1 )
 
 [node name="UIQuests" parent="Interface/Missions" instance=ExtResource( 12 )]
-visible = true
 
 [node name="Inventory" type="Sprite" parent="Interface"]
 visible = false
@@ -53,7 +52,7 @@ scale = Vector2( 2.83, 2.83 )
 texture = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Interface/Map"]
-position = Vector2( -45.583, 4.947 )
+position = Vector2( -24.0283, 7.77384 )
 scale = Vector2( 1.51703, 1.51703 )
 texture = ExtResource( 4 )
 
@@ -70,13 +69,11 @@ scale = Vector2( 2.83, 2.83 )
 texture = ExtResource( 2 )
 script = ExtResource( 14 )
 
-[node name="UIgloss" parent="Interface/Gloss" instance=ExtResource( 13 )]
-
 [node name="Tech" type="Button" parent="Interface/Gloss"]
-margin_left = 104.594
-margin_top = -61.1307
-margin_right = 146.594
-margin_bottom = -41.1307
+margin_left = 105.0
+margin_top = -61.0
+margin_right = 147.0
+margin_bottom = -41.0
 text = "Tech"
 
 [node name="Persons" type="Button" parent="Interface/Gloss"]
@@ -92,6 +89,15 @@ margin_top = -37.4558
 margin_right = 146.947
 margin_bottom = -17.4558
 text = "Worl"
+
+[node name="UIgloss" parent="Interface/Gloss" instance=ExtResource( 13 )]
+
+[node name="Image" type="TextureRect" parent="Interface/Gloss"]
+margin_left = 10.0
+margin_top = -10.0
+margin_right = 10.0
+margin_bottom = -10.0
+rect_scale = Vector2( 0.75, 0.75 )
 
 [node name="Button" type="Button" parent="Interface"]
 self_modulate = Color( 1, 1, 1, 0.333333 )
