@@ -39,6 +39,21 @@ func _input(event):
 			position.x = get_parent().get_node("Player").get_node("PlayerCollision").global_position.x - 741
 			position.y = get_parent().get_node("Player").get_node("PlayerCollision").global_position.y - 530
 			if back_menue_bool == false and (get_tree().paused == false):
+				#если игрок двигался
+				if get_parent().get_node("Player").isPlayerMoved == true:
+					#пихаем камеру в центр
+					get_parent().get_node("Player").get_node("CameraPlayer").offset_h = 0
+					get_parent().get_node("Player").get_node("CameraPlayer").offset_v = 0 
+					#таймер
+					var t = Timer.new()
+					t.set_wait_time(0.4)
+					t.set_one_shot(true)
+					self.add_child(t)
+					t.start()
+					yield(t, "timeout")
+					t.queue_free()
+					get_parent().get_node("Player").isPlayerMoved = false
+					#
 				$Interface.visible = true
 				#
 				var quests = get_parent().get_player().quests

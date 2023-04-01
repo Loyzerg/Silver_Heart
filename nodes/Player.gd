@@ -7,8 +7,8 @@ const AIR_RESISTENCE = 0.05
 var motion = Vector2.ZERO
 var idle = "idle_front"
 var isAttacking = false
-
-
+#переменнная если игрок двигался
+var isPlayerMoved = true
 
 #система передвижения
 func _physics_process(delta):
@@ -16,9 +16,11 @@ func _physics_process(delta):
 	var x_input = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	var y_input = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	if x_input != 0 && isAttacking == false:
+		isPlayerMoved = true
 		motion.x += x_input * ACCELERATION * delta
 		motion.x = clamp(motion.x, -MAX_SPEED, MAX_SPEED)
 	if y_input != 0 && isAttacking == false:
+		isPlayerMoved = true
 		motion.y += y_input * ACCELERATION * delta
 		motion.y = clamp(motion.y, -MAX_SPEED, MAX_SPEED)
 	motion = move_and_slide(motion, Vector2.UP)
