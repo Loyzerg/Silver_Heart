@@ -1,42 +1,29 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://PanelQ.gd" type="Script" id=2]
 [ext_resource path="res://ControlQ.gd" type="Script" id=3]
-[ext_resource path="res://fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=4]
-
-[sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 4 )
 
 [node name="UIQuests" type="CanvasLayer"]
 
 [node name="ControlQ" type="Control" parent="."]
-margin_left = 130.0
-margin_top = 201.0
+margin_left = 220.0
+margin_top = 364.0
 margin_right = 1268.0
-margin_bottom = 979.0
+margin_bottom = 876.0
 script = ExtResource( 3 )
 
 [node name="PanelQ" type="NinePatchRect" parent="ControlQ"]
-margin_left = -4.0
-margin_top = -15.0
+margin_left = 177.0
+margin_top = 95.0
 margin_right = 1179.0
-margin_bottom = 740.0
+margin_bottom = 573.0
 script = ExtResource( 2 )
 
-[node name="Label" type="Label" parent="ControlQ/PanelQ"]
-visible = false
-margin_left = 426.0
-margin_top = 376.0
-margin_right = 554.0
-margin_bottom = 392.0
-custom_fonts/font = SubResource( 1 )
-text = "Проверка"
-
 [node name="Scroll" type="ScrollContainer" parent="ControlQ/PanelQ"]
-margin_left = 405.0
-margin_top = 250.0
-margin_right = 1222.0
-margin_bottom = 716.0
+margin_left = 35.0
+margin_top = 16.0
+margin_right = 852.0
+margin_bottom = 482.0
 
 [node name="Grid" type="GridContainer" parent="ControlQ/PanelQ/Scroll"]
 custom_constants/vseparation = 300

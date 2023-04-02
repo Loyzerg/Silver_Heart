@@ -15,15 +15,16 @@ func _input(event):
 			#абсолютно то же самое, что и в Esc_menue
 			if back_menue_bool == false and (get_tree().paused == false):
 				$Interface.visible = true
-				#
 				var quests = get_parent().get_player().quests
+				$Interface/Missions.visible = true
 				$Interface/Missions/UIQuests/ControlQ.toggle_quest(quests)
+				$Interface/Missions/UIQuests.visible = true
 				#
 				get_tree().paused = true
 				back_menue_bool = true
 				return
 			if back_menue_bool == true:
-				$Interface/Missions.visible = true
+				$Interface/Missions.visible = false
 				$Interface/Inventory.visible = false
 				$Interface/Map.visible = false
 				$Interface/Gloss.visible = false
@@ -32,6 +33,9 @@ func _input(event):
 				$Interface/Inventory/UInventory/Control/Panel.visible = false
 				$Interface/Gloss/UIgloss/ControlGloss/PanelGloss.visible = false
 				$Interface/Missions/UIQuests/ControlQ/PanelQ.visible = false
+				$Interface/Inventory/UInventory.visible = false
+				$Interface/Gloss/UIgloss.visible = false
+				$Interface/Missions/UIQuests.visible = false
 				get_tree().paused = false
 				back_menue_bool = false
 				return
@@ -55,15 +59,16 @@ func _input(event):
 					get_parent().get_node("Player").isPlayerMoved = false
 					#
 				$Interface.visible = true
-				#
 				var quests = get_parent().get_player().quests
+				$Interface/Missions.visible = true
 				$Interface/Missions/UIQuests/ControlQ.toggle_quest(quests)
+				$Interface/Missions/UIQuests.visible = true
 				#
 				get_tree().paused = true
 				back_menue_bool = true
 				return
 			if back_menue_bool == true:
-				$Interface/Missions.visible = true
+				$Interface/Missions.visible = false
 				$Interface/Inventory.visible = false
 				$Interface/Map.visible = false
 				$Interface/Gloss.visible = false
@@ -72,6 +77,9 @@ func _input(event):
 				$Interface/Inventory/UInventory/Control/Panel.visible = false
 				$Interface/Gloss/UIgloss/ControlGloss/PanelGloss.visible = false
 				$Interface/Missions/UIQuests/ControlQ/PanelQ.visible = false
+				$Interface/Inventory/UInventory.visible = false
+				$Interface/Gloss/UIgloss.visible = false
+				$Interface/Missions/UIQuests.visible = false
 				get_tree().paused = false
 				back_menue_bool = false
 				return
